@@ -1,0 +1,6 @@
+if SHIELD_CAON
+
+config ZMK_KEYBOARD_NAME
+    default "Caon"
+
+endif
