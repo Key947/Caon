@@ -1,6 +1,0 @@
-if SHIELD_caon
-
-config ZMK_KEYBOARD_NAME
-    default "caon"
-
-endif

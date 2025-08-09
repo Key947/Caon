@@ -1,6 +1,6 @@
-if SHIELD_NOTXT14X5
+if SHIELD_CAON
 
 config ZMK_KEYBOARD_NAME
-    default "notxt14x5"
+    default "caon"
 
 endif
