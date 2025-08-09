@@ -19,7 +19,5 @@
 ---
 
 include:
-  board:
-  - nice_nano_v2
-  shield: 
-  - Caon
+  - board: nice_nano_v2
+    shield: Caon
