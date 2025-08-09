@@ -19,5 +19,5 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: caon
+    shield: Caon
     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
