@@ -1,4 +1,3 @@
-name: zmk-keyboard-caon
 build:
   settings:
     board_root: .
