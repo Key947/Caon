@@ -74,10 +74,9 @@
         status = "okay";
         //wakeup-source; 
         gpio-controller;
-        spi-max-frequency = <200000>;                                           // Maximum SPI frequency (4 MHz)
+        spi-max-frequency = <200000>;                                           // Maximum SPI frequency (2 MHz)
         #gpio-cells = <2>;
         reg = <0>;                                                              // SPI device address
-        #gpio-cells = <2>;
         ngpios = <8>;
     };
 
