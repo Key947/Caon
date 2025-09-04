@@ -41,6 +41,25 @@
     };
 };
 
+// Encoders GPIO Assignment
+
+&left_encoder {
+    status = "okay";
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+ 
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <20>;
+    };
+};
+
 // SPI Pin Control
 
 &pinctrl {
@@ -88,26 +107,4 @@
         reg = <0>;                                                              // SPI device address
         ngpios = <8>;
     };
-};
-
-// Encoders GPIO Assignment
-
-/ {
-    left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        steps = <80>;
-        status = "disabled";
-    };
- 
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder>;
-        triggers-per-rotation = <20>;
-    };
-};
-
-&left_encoder {
-    status = "okay";
-        a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 };
