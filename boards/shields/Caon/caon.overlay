@@ -40,6 +40,12 @@
         triggers-per-rotation = <20>;
     };
 
+// Encoders Enable
+
+&left_encoder {
+    status = "okay";
+};
+
 // Matrix Kscan Transform
 
     default_transform: keymap_transform_0 {
@@ -55,12 +61,6 @@
             >
         ;
     };
-};
-
-// Encoders Enable
-
-&left_encoder {
-    status = "okay";
 };
 
 // SPI Pin Control
