@@ -51,18 +51,18 @@
         ;
 
         b-gpios =
-            <&gpio0 09 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
+            <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>
         ;
 
         steps = <80>;
         status = "disabled";
     };
  
-        sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&test_encoder>;
-        triggers-per-rotation = <20>;
-    };
+sensors: sensors {
+    compatible = "zmk,keymap-sensors";
+    sensors = <&test_encoder>;
+    triggers-per-rotation = <20>;
+};
 
 &test_encoder {
     status = "okay";
