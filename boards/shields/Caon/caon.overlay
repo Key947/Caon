@@ -43,7 +43,7 @@
 
 // Encoders GPIO Assignment
 
-    test_encoder: encoder_test {
+    left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -51,13 +51,13 @@
         status = "disabled";
     };
  
-sensors: sensors {
-    compatible = "zmk,keymap-sensors";
-    sensors = <&test_encoder>;
-    triggers-per-rotation = <20>;
-};
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <20>;
+    };
 
-&test_encoder {
+&left_encoder {
     status = "okay";
 };
 
