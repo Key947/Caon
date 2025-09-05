@@ -30,7 +30,7 @@
         compatible = "alps,ec11";
         a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
+        steps = <20>;
         status = "disabled";
     };
  
@@ -39,11 +39,6 @@
         sensors = <&left_encoder>;
         triggers-per-rotation = <20>;
     };
-
-// Encoders Enable
-
-&left_encoder {
-    status = "okay";
 };
 
 // Matrix Kscan Transform
@@ -61,7 +56,6 @@
             >
         ;
     };
-};
 
 // SPI Pin Control
 
@@ -110,4 +104,8 @@
         reg = <0>;                                                              // SPI device address
         ngpios = <8>;
     };
+};
+
+&left_encoder {
+    status = "okay";
 };
