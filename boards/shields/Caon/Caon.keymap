@@ -10,7 +10,7 @@
 
 / {
     behaviors {
-        mouse_scroll: mouse_scroll {
+        pointing_scrl: pointing_scrl {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc>, <&msc>;
@@ -30,7 +30,7 @@
 
             >;
 
-    sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
+    sensor-bindings = <&pointing_scrl SCRL_UP SCRL_DOWN &pointing_scrl SCRL_LEFT SCRL_RIGHT>;
     
         };
     };
