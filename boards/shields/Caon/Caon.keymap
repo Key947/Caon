@@ -1,5 +1,5 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1600  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 4800
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
@@ -39,8 +39,8 @@
             display-name = "Base";
             bindings = <
 
-                &kp A     &kp B     &kp C     &kp D
-                &kp E     &kp F     &kp G     &mo LOWER
+                &kp A     &kp B     &kp C     &PG_UP
+                &kp D     &kp E     &mo LOWER &PG_DN
 
             >;
             sensor-bindings = <&mouse_move MOVE_UP MOVE_DOWN &mouse_move MOVE_LEFT MOVE_RIGHT>;
@@ -50,8 +50,8 @@
             display-name = "Lower";
             bindings = <
 
-                &kp N1     &kp N2     &kp N3     &kp N4
-                &kp N5     &kp N6     &kp N7     &trans
+                &kp N1     &kp N2     &kp N3     &BSPC
+                &kp N4     &kp N5     &trans     &DEL
 
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
