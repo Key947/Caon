@@ -1,5 +1,5 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 140  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 140    // default: 10
 
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
@@ -12,7 +12,7 @@
     behaviors {
         mouse_scroll: sensor_scroll {
         	compatible = "zmk,behavior-sensor-rotate-var";
-        	#sensor-binding-cells = <0>;
+        	#sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
             tap-ms = <20>;
 		};
