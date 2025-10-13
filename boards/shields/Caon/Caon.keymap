@@ -8,13 +8,15 @@
 
 // Sensor Rotate Behavior for Encoders
 
-/ {
+
+/ { 
     behaviors {
-        pointing_scrl: pointing_scrl {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
+        mouse_scroll: sensor_scroll {
+        	compatible = "zmk,behavior-sensor-rotate-var";
+        	#sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
-        };
+            tap-ms = <20>;
+		};
     };
 
 // Keymap Default Layer Config
@@ -30,7 +32,7 @@
 
             >;
 
-    sensor-bindings = <&pointing_scrl SCRL_UP SCRL_DOWN &pointing_scrl SCRL_LEFT SCRL_RIGHT>;
+    sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
     
         };
     };
