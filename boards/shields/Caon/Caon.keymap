@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 4800
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 8000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 #include <dt-bindings/zmk/pointing.h>
@@ -30,6 +30,17 @@
 		};
     };
 
+    behaviors {
+        cursor_moving: cursor_move {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <1>;
+        };
+    };
+
 // Keymap Default Layer Config
 
       keymap {
@@ -50,8 +61,8 @@
             display-name = "Lower";
             bindings = <
 
-                &kp N1     &kp N2     &kp N3     &kp BSPC
-                &kp N4     &kp N5     &trans     &kp DEL
+                &kp N1     &kp N2     &kp N3     &mkp MB1
+                &kp N4     &kp N5     &trans     &mkp MB2
 
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
