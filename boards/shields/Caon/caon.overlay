@@ -32,7 +32,7 @@
         compatible = "alps,ec11";
         a-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <144>;
+        steps = <80>;
         status = "disabled";
     };
 
@@ -42,16 +42,17 @@
         compatible = "alps,ec11";
         a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <144>;
+        steps = <80>;
         status = "disabled";
     };
- 
+
+// Encoders as Sensors
+
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&top_encoder &bottom_encoder>;
         triggers-per-rotation = <36>;
     };
-
 
 // Matrix Kscan Transform
 
@@ -100,9 +101,9 @@
 
 &spi1 {
     status = "okay";
-    pinctrl-0 = <&spi1_default>;                                                // Default pin configuration
-    pinctrl-1 = <&spi1_sleep>;                                                  // Low power pin configuration
-    pinctrl-names = "default", "sleep";                                         // Names of the pin configurations 
+    pinctrl-0 = <&spi1_default>;                                                // Default pin configuration For Shift Register
+    pinctrl-1 = <&spi1_sleep>;                                                  // Low power pin configuration For Shift Register
+    pinctrl-names = "default", "sleep";                                         // Names of the pin configurations For Shift Register
     
         cs-gpios =
             <&gpio0 17 GPIO_ACTIVE_LOW>                                         // Pin 0.17 for CS (Chip Select), active low
@@ -118,6 +119,8 @@
         ngpios = <16>;                                                          // 8 per shift register chained
     };
 };
+
+// Encoder Enables
 
 &top_encoder {
     status = "okay";
