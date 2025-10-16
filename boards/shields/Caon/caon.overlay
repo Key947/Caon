@@ -147,7 +147,7 @@
 
 // OLED Device Definition
 
-&i2c1 {
+&i2c0 {
     compatible = "nordic,nrf-twim"; // I2C controller instead of generic
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
