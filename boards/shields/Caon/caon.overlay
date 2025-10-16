@@ -102,7 +102,7 @@
 
 &pinctrl {
     i2c0_default: i2c0_default {
-        group1 {
+        group1 {    
             psels = 
                 <NRF_PSEL(TWIM_SDA, 0, 20)>,
                 <NRF_PSEL(TWIM_SCL, 0, 22)>
@@ -126,21 +126,21 @@
 
 &spi1 {
     status = "okay";
-    pinctrl-0 = <&spi1_default>;                                                // Default pin configuration
-    pinctrl-1 = <&spi1_sleep>;                                                  // Low power pin configuration
-    pinctrl-names = "default", "sleep";                                         // Names of the pin configurations 
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
     
         cs-gpios =
             <&gpio0 17 GPIO_ACTIVE_LOW>                                         // Pin 0.17 for CS (Chip Select), active low
         ;
         
     shift_reg: 595@0 {
-        compatible = "zmk,gpio-595";                                            // Specification of the compatible device
+        compatible = "zmk,gpio-595";
         status = "okay";                                                        // okay
         gpio-controller;
         spi-max-frequency = <400000>;                                           // Maximum SPI frequency (4 MHz) 
         #gpio-cells = <2>;
-        reg = <0>;                                                              // SPI device address
+        reg = <0>;
         ngpios = <16>;                                                          // 8 per shift register chained
     };
 };
