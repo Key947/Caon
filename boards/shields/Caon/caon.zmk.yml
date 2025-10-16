@@ -4,6 +4,8 @@ name: Caon
 type: shield
 url: https://github.com/Key947/Caon
 requires: [pro_micro]
+exposes: [i2c_oled]
 features:
   - keys
   - encoder
+  - display
