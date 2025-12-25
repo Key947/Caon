@@ -10,7 +10,7 @@ manifest:
   # ZMK Remotes
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3
       import: app/west.yml
   # OLED Support
     - name: zmk-nice-oled
