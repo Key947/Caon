@@ -7,7 +7,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
-#define LOWER 1
+#define TOP 1
+#define LOWER 2
 
 // Sensor Rotate Behavior for Encoders
 
@@ -60,13 +61,13 @@
                 &kp TAB          &kp Q           &kp W            &kp E         &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT    &kp RBKT     &kp BSLH       &kp PG_UP
                 &kp CAPS         &kp A           &kp S            &kp D         &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT     &kp RET      &kp RET        &kp PG_DN
                 &kp LSHIFT       &kp LSHIFT      &kp Z            &kp X         &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT    &kp UP         &none
-                &kp LCTRL        &kp LGUI        &mo LOWER        &kp LALT      &kp SPACE   &mo LOWER   &mo LOWER   &mo LOWER   &kp SPACE   &mo LOWER   &kp GRAVE   &kp DEL     &kp LEFT     &kp DOWN       &kp RIGHT 
+                &kp LCTRL        &kp LGUI        &mo 1            &kp LALT      &kp SPACE   &mo 1       &tog 2      &mo 1       &kp SPACE   &mo 1       &kp GRAVE   &kp DEL     &kp LEFT     &kp DOWN       &kp RIGHT 
 
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
 
-        lower_layer {
+        top_layer {
             display-name = "Top";
             bindings = <
 
@@ -76,14 +77,36 @@
                 // LSHFT         LSHFT           Z               X              C           V           B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
                 // LCTRL         WIN             FN              ALT            SPC         SPC         SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
 
-                &bt BT_CLR       &kp PG_UP      &kp PG_DN       &none           &none       &none       &none       &none       &none       &none       &none       &none        &none         &sys_reset     &bootloader
-                &none            &kp DEL        &kp UP          &kp BSPC        &kp PSCRN   &none       &none       &none       &none       &none       &none       &none        &none         &none          &none
-                &none            &kp LEFT       &kp DOWN        &kp RIGHT       &kp RET     &none       &none       &none       &none       &none       &none       &none        &none         &none          &none
-                &none            &none          &kp C_VOL_DN    &kp C_VOL_UP    &kp C_MUTE  &none       &none       &none       &none       &none       &none       &none        &none         &none          &none
-                &none            &none          &none           &none           &none       &none       &none       &none       &none       &none       &none       &none        &none         &none          &none
+                &bt BT_CLR       &kp PG_UP       &kp PG_DN       &none          &none       &none       &none       &none       &none       &none       &none       &none       &none        &sys_reset     &bootloader
+                &none            &kp DEL         &kp UP          &kp BSPC       &kp PSCRN   &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &none            &kp LEFT        &kp DOWN        &kp RIGHT      &kp RET     &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &none            &none           &kp C_VOL_DN    &kp C_VOL_UP   &kp C_MUTE  &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &none            &none           &none           &none          &none       &mkp MB1    &none       &none       &none       &none       &none       &none       &none        &none          &none
 
             >;
             sensor-bindings = <&mouse_move MOVE_UP MOVE_DOWN &mouse_move MOVE_LEFT MOVE_RIGHT>;
         };
+
+        lower_layer {
+            display-name = "Low";
+            bindings = <
+  
+                // ESC           1               2                3             4           5           6           7           8           9           0           -           =            BACK           BACK
+                // TAB           Q               W                E             R           T           Y           U           I           O           P           [           ]            \              ENC_SW0
+                // CAPS          A               S                D             F           G           H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
+                // LSHFT         LSHFT           Z                X             C           V           B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LCTRL         WIN             FN               ALT           SPC         SPC         SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
+    
+                &kp ESC          &kp F1          &kp F2           &kp F2        &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11      &kp F12        &none
+                &kp TAB          &kp N1          &kp N2           &kp N3        &kp N0      &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp CAPS         &kp N4          &kp N5           &kp N6        &kp N0      &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp LSHIFT       &kp LSHIFT      &kp N7           &kp N8        &kp N9      &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp LCTRL        &kp LGUI        &none            &kp LALT      &kp SPACE   &none       &tog 2      &none       &none       &none       &none       &none       &none        &none          &none
+
+            >;
+            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
+        };
+
     };
 };
+
