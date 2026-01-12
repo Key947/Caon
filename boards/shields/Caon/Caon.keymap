@@ -9,6 +9,7 @@
 #define BASE 0
 #define TOP 1
 #define LOWER 2
+#define AUX 3
 
 // Sensor Rotate Behavior for Encoders
 
@@ -52,17 +53,17 @@
             display-name = "Base";
             bindings = <
   
-                // ESC           1               2                3             4           5           6           7           8           9           0           -           =            BACK           BACK
-                // TAB           Q               W                E             R           T           Y           U           I           O           P           [           ]            \              ENC_SW0
-                // CAPS          A               S                D             F           G           H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
-                // LSHFT         LSHFT           Z                X             C           V           B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
-                // LCTRL         WIN             FN               ALT           SPC         SPC         SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
+                // ESC           1               2                3             4               5               6           7           8           9           0           -           =            BACK           BACK
+                // TAB           Q               W                E             R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
+                // CAPS          A               S                D             F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
+                // LSHFT         LSHFT           Z                X             C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LCTRL         WIN             FN               ALT           SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
     
-                &kp ESC          &kp N1          &kp N2           &kp N3        &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL    &kp BSPC       &kp BSPC 
-                &kp TAB          &kp Q           &kp W            &kp E         &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT    &kp RBKT     &kp BSLH       &mkp MB1
-                &kp CAPS         &kp A           &kp S            &kp D         &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT     &kp RET      &kp RET        &mkp MB2
-                &kp LSHIFT       &kp LSHIFT      &kp Z            &kp X         &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT    &kp UP         &none
-                &kp LCTRL        &kp LGUI        &mo 1            &kp LALT      &kp SPACE   &mo 1       &mo 2       &mo 1       &kp SPACE   &mo 1       &kp GRAVE   &kp DEL     &kp LEFT     &kp DOWN       &kp RIGHT 
+                &kp ESC          &kp N1          &kp N2           &kp N3        &kp N4          &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL    &kp BSPC       &kp BSPC 
+                &kp TAB          &kp Q           &kp W            &kp E         &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT    &kp RBKT     &kp BSLH       &mkp MB1
+                &kp CAPS         &kp A           &kp S            &kp D         &kp F           &kp G           &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT     &kp RET      &kp RET        &mkp MB2
+                &kp LSHIFT       &kp LSHIFT      &kp Z            &kp X         &kp C           &kp V           &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT    &kp UP         &none
+                &kp LCTRL        &kp LGUI        &mo 3            &kp LALT      &kp SPACE       &mo 1           &mo 2       &mo 3       &kp SPACE   &mo 1       &kp GRAVE   &kp DEL     &kp LEFT     &kp DOWN       &kp RIGHT 
 
             >;
             sensor-bindings = <&mouse_move MOVE_UP MOVE_DOWN &mouse_move MOVE_LEFT MOVE_RIGHT>;
@@ -73,17 +74,17 @@
             display-name = "Top";
             bindings = <
 
-                // ESC           1               2               3              4           5           6           7           8           9           0           -           =            BACK           BACK
-                // TAB           Q               W               E              R           T           Y           U           I           O           P           [           ]            \              ENC_SW0
-                // CAPS          A               S               D              F           G           H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
-                // LSHFT         LSHFT           Z               X              C           V           B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
-                // LCTRL         WIN             FN              ALT            SPC         SPC         SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
-
-                &bt BT_CLR       &kp PG_UP       &kp PG_DN       &kp INS        &none       &none       &none       &none       &none       &none       &none       &none       &none        &sys_reset     &bootloader
-                &kp TAB          &kp DEL         &kp UP          &kp BSPC       &kp PSCRN   &kp HOME    &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB3
-                &kp CAPS         &kp LEFT        &kp DOWN        &kp RIGHT      &kp RET     &kp END     &none       &none       &none       &none       &none       &none       &none        &none          &none
-                &kp LSHIFT       &kp LSHIFT      &kp C_VOL_DN    &kp C_VOL_UP   &kp C_MUTE  &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
-                &kp LCTRL        &kp LGUI        &none           &none          &none       &mkp MB1    &none       &none       &none       &none       &none       &none       &none        &none          &none
+                // ESC           1               2               3              4               5               6           7           8           9           0           -           =            BACK           BACK
+                // TAB           Q               W               E              R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
+                // CAPS          A               S               D              F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
+                // LSHFT         LSHFT           Z               X              C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LCTRL         WIN             FN              ALT            SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
+        
+                &bt BT_CLR       &kp PG_UP       &kp PG_DN       &kp INS        &none           &none           &none       &none       &none       &none       &none       &none       &none        &sys_reset     &bootloader
+                &kp TAB          &kp DEL         &kp UP          &kp BSPC       &kp PSCRN       &kp HOME        &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB3
+                &kp CAPS         &kp LEFT        &kp DOWN        &kp RIGHT      &kp RET         &kp END         &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp LSHIFT       &kp LSHIFT      &kp C_VOL_DN    &kp C_VOL_UP   &kp C_MUTE      &none           &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp LCTRL        &kp LGUI        &none           &none          &none           &mkp MB1        &none       &none       &none       &none       &none       &none       &none        &none          &none
 
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
@@ -93,22 +94,41 @@
             display-name = "Low";
             bindings = <
   
-                // ESC           1               2                3             4           5           6           7           8           9           0           -           =            BACK           BACK
-                // TAB           Q               W                E             R           T           Y           U           I           O           P           [           ]            \              ENC_SW0
-                // CAPS          A               S                D             F           G           H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
-                // LSHFT         LSHFT           Z                X             C           V           B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
-                // LCTRL         WIN             FN               ALT           SPC         SPC         SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
+                // ESC           1               2                3             4               5               6           7           8           9           0           -           =            BACK           BACK
+                // TAB           Q               W                E             R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
+                // CAPS          A               S                D             F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
+                // LSHFT         LSHFT           Z                X             C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LCTRL         WIN             FN               ALT           SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
     
-                &kp ESC          &kp F1          &kp F2           &kp F3        &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12      &none          &none
-                &kp TAB          &kp N1          &kp N2           &kp N3        &kp N0      &none       &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB4
-                &kp CAPS         &kp N4          &kp N5           &kp N6        &kp N0      &none       &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB5
-                &kp LSHIFT       &kp LSHIFT      &kp N7           &kp N8        &kp N9      &none       &none       &none       &none       &none       &none       &none       &none        &none          &none
-                &kp LCTRL        &kp LGUI        &none            &kp LALT      &kp SPACE   &none       &none       &none       &none       &none       &none       &none       &bt BT_PRV   &none          &bt BT_NXT
+                &kp ESC          &kp F1          &kp F2           &kp F3        &kp F4          &kp F5          &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12      &none          &none
+                &kp TAB          &kp N1          &kp N2           &kp N3        &kp N0          &none           &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB4
+                &kp CAPS         &kp N4          &kp N5           &kp N6        &kp N0          &none           &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB5
+                &kp LSHIFT       &kp LSHIFT      &kp N7           &kp N8        &kp N9          &none           &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp LCTRL        &kp LGUI        &none            &kp LALT      &kp SPACE       &none           &none       &none       &none       &none       &none       &none       &none        &none          &none
 
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
 
+        lower_layer {
+            display-name = "Low";
+            bindings = <
+  
+                // ESC           1               2                3                 4               5               6           7           8           9           0           -           =            BACK           BACK
+                // TAB           Q               W                E                 R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
+                // CAPS          A               S                D                 F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
+                // LSHFT         LSHFT           Z                X                 C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LCTRL         WIN             FN               ALT               SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
+    
+                &bt BT_CLR       &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp TAB          &mkp MB4        &mmv MOVE_UP     &mkp MB5          &none           &none           &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB4
+                &kp CAPS         &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB1        &mkp MB2        &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB5
+                &kp LSHIFT       &bt BT_PRV      &bt BT_NXT       &none             &none           &none           &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp LCTRL        &kp LGUI        &none            &none             &none           &none           &none       &none       &none       &none       &none       &none       &none        &none          &none
+
+            >;
+            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
+        };
     };
 };
 
