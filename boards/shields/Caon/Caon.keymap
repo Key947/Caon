@@ -9,7 +9,7 @@
 #define BASE 0
 #define TOP 1
 #define LOWER 2
-#define AUX 3
+#define AUXILIARY 3
 
 // Sensor Rotate Behavior for Encoders
 
@@ -110,8 +110,8 @@
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
         };
 
-        lower_layer {
-            display-name = "Low";
+        auxiliary_layer {
+            display-name = "Aux";
             bindings = <
   
                 // ESC           1               2                3                 4               5               6           7           8           9           0           -           =            BACK           BACK
