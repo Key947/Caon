@@ -81,10 +81,10 @@
                 // LCTRL         WIN             FN              ALT            SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
         
                 &bt BT_CLR       &kp PG_UP       &kp PG_DN       &kp INS        &none           &none           &none       &none       &none       &none       &none       &none       &none        &sys_reset     &bootloader
-                &kp TAB          &kp DEL         &kp UP          &kp BSPC       &kp PSCRN       &kp HOME        &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB3
-                &kp CAPS         &kp LEFT        &kp DOWN        &kp RIGHT      &kp RET         &kp END         &none       &none       &none       &none       &none       &none       &none        &none          &none
-                &kp LSHIFT       &kp LSHIFT      &kp C_VOL_DN    &kp C_VOL_UP   &kp C_MUTE      &none           &none       &none       &none       &none       &none       &none       &none        &none          &none
-                &kp LCTRL        &kp LGUI        &none           &none          &none           &mkp MB1        &none       &none       &none       &none       &none       &none       &none        &none          &none
+                &kp TAB          &kp DEL         &kp UP          &kp BSPC       &kp PSCRN       &kp HOME        &kp Y       &kp U       &kp I       &kp O       &kp P       &none       &none        &none          &mkp MB3
+                &kp CAPS         &kp LEFT        &kp DOWN        &kp RIGHT      &kp RET         &kp END         &kp H       &kp J       &kp K       &kp L       &none       &none       &none        &none          &none
+                &kp LSHIFT       &kp LSHIFT      &kp C_VOL_DN    &kp C_VOL_UP   &kp C_MUTE      &none           &kp B       &kp N       &kp M       &none       &none       &none       &none        &none          &none
+                &kp LCTRL        &kp LGUI        &none           &none          &none           &mkp MB1        &none       &none       &none       &none       &none       &kp LCTRL   &none        &none          &none
 
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
