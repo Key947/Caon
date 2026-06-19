@@ -13,7 +13,7 @@
 
 // Sensor Rotate Behavior for Encoders
 
-/ { 
+/ {
     behaviors {
         mouse_scroll: sensor_scroll {
         	compatible = "zmk,behavior-sensor-rotate-var";
@@ -38,7 +38,7 @@
             #binding-cells = <1>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
-            trigger-period-ms = <10>;        
+            trigger-period-ms = <10>;
             time-to-max-speed-ms = <100>;
             acceleration-exponent = <2>;
         };
@@ -52,22 +52,22 @@
         default_layer {
             display-name = "Base";
             bindings = <
-  
+
                 // ESC           1               2                3             4               5               6           7           8           9           0           -           =            BACK           BACK
                 // TAB           Q               W                E             R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
                 // CAPS          A               S                D             F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
-                // LSHFT         LSHFT           Z                X             C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LSHFT         LSHFT           Z                X             C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused)
                 // LCTRL         WIN             FN               ALT           SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
-    
-                &kp ESC          &kp N1          &kp N2           &kp N3        &kp N4          &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL    &kp BSPC       &kp BSPC 
+
+                &kp ESC          &kp N1          &kp N2           &kp N3        &kp N4          &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL    &kp BSPC       &kp BSPC
                 &kp TAB          &kp Q           &kp W            &kp E         &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT    &kp RBKT     &kp BSLH       &mkp MB1
                 &kp CAPS         &kp A           &kp S            &kp D         &kp F           &kp G           &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT     &kp RET      &kp RET        &mkp MB2
                 &kp LSHIFT       &kp LSHIFT      &kp Z            &kp X         &kp C           &kp V           &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT    &kp UP         &none
-                &kp LCTRL        &kp LGUI        &mo 3            &kp LALT      &kp SPACE       &mo 1           &mo 2       &mo 3       &kp SPACE   &mo 1       &kp GRAVE   &kp DEL     &kp LEFT     &kp DOWN       &kp RIGHT 
+                &kp LCTRL        &kp LGUI        &mo 3            &kp LALT      &kp SPACE       &mo 1           &mo 2       &mo 3       &kp SPACE   &mo 1       &kp GRAVE   &kp DEL     &kp LEFT     &kp DOWN       &kp RIGHT
 
             >;
             sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN &mouse_scroll SCRL_LEFT SCRL_RIGHT>;
-            
+
         };
 
         top_layer {
@@ -77,10 +77,10 @@
                 // ESC           1               2               3              4               5               6           7           8           9           0           -           =            BACK           BACK
                 // TAB           Q               W               E              R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
                 // CAPS          A               S               D              F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
-                // LSHFT         LSHFT           Z               X              C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LSHFT         LSHFT           Z               X              C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused)
                 // LCTRL         WIN             FN              ALT            SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
-        
-                &bt BT_CLR       &kp PG_UP       &kp PG_DN       &kp INS        &none           &none           &none       &none       &none       &none       &none       &none       &none        &sys_reset     &bootloader
+
+                &kp ESC          &kp PG_UP       &kp PG_DN       &kp INS        &none           &none           &none       &none       &none       &none       &none       &none       &none        &sys_reset     &bootloader
                 &kp TAB          &kp DEL         &kp UP          &kp BSPC       &kp PSCRN       &kp HOME        &kp Y       &kp U       &kp I       &kp O       &kp P       &none       &none        &none          &mkp MB3
                 &kp CAPS         &kp LEFT        &kp DOWN        &kp RIGHT      &kp RET         &kp END         &kp H       &kp J       &kp K       &kp L       &none       &none       &none        &none          &none
                 &kp LSHIFT       &kp LSHIFT      &kp C_VOL_DN    &kp C_VOL_UP   &kp C_MUTE      &none           &kp B       &kp N       &kp M       &none       &none       &none       &none        &none          &none
@@ -93,13 +93,13 @@
         lower_layer {
             display-name = "Low";
             bindings = <
-  
+
                 // ESC           1               2                3             4               5               6           7           8           9           0           -           =            BACK           BACK
                 // TAB           Q               W                E             R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
                 // CAPS          A               S                D             F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
-                // LSHFT         LSHFT           Z                X             C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LSHFT         LSHFT           Z                X             C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused)
                 // LCTRL         WIN             FN               ALT           SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
-    
+
                 &kp ESC          &kp F1          &kp F2           &kp F3        &kp F4          &kp F5          &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12      &none          &none
                 &kp TAB          &kp N1          &kp N2           &kp N3        &kp N0          &none           &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB4
                 &kp CAPS         &kp N4          &kp N5           &kp N6        &kp N0          &none           &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB5
@@ -113,13 +113,13 @@
         auxiliary_layer {
             display-name = "Aux";
             bindings = <
-  
+
                 // ESC           1               2                3                 4               5               6           7           8           9           0           -           =            BACK           BACK
                 // TAB           Q               W                E                 R               T               Y           U           I           O           P           [           ]            \              ENC_SW0
                 // CAPS          A               S                D                 F               G               H           J           K           L           ;           '           ENTER        ENTER          ENC_SW1
-                // LSHFT         LSHFT           Z                X                 C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused) 
+                // LSHFT         LSHFT           Z                X                 C               V               B           N           M           ,           .           /           SHIFT        ↑              (Unused)
                 // LCTRL         WIN             FN               ALT               SPC             SPC             SPC         SPC         SPC         FN          `           DEL         ←            ↓              →
-    
+
                 &bt BT_CLR       &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &none       &none       &none       &none       &none       &none       &none        &none          &none
                 &kp TAB          &mkp MB4        &mmv MOVE_UP     &mkp MB5          &none           &none           &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB4
                 &kp CAPS         &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MB1        &mkp MB2        &none       &none       &none       &none       &none       &none       &none        &none          &mkp MB5
