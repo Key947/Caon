@@ -38,8 +38,8 @@
             #binding-cells = <1>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
-            trigger-period-ms = <10>;
-            time-to-max-speed-ms = <100>;
+            trigger-period-ms = <5>;
+            time-to-max-speed-ms = <50>;
             acceleration-exponent = <2>;
         };
     };
