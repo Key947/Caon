@@ -66,7 +66,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&top_encoder &bottom_encoder>;
-        triggers-per-rotation = <10>;
+        triggers-per-rotation = <15>;
     };
 
 // Matrix Kscan Transform
