@@ -47,7 +47,7 @@
         compatible = "alps,ec11";
         a-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <144>;
+        steps = <76>;
         status = "disabled";
     };
 
@@ -57,7 +57,7 @@
         compatible = "alps,ec11";
         a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <144>;
+        steps = <76>;
         status = "disabled";
     };
 
@@ -66,7 +66,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&top_encoder &bottom_encoder>;
-        triggers-per-rotation = <36>;
+        triggers-per-rotation = <19>;
     };
 
 // Matrix Kscan Transform
@@ -94,15 +94,14 @@
     };
 };
 
-// SPI Pin Control
+// SPI Pin Control, (MISO) Unused
 
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
             psels =
                 <NRF_PSEL (SPIM_SCK, 0, 8)>,
-                <NRF_PSEL (SPIM_MOSI, 0, 6)>,
-                <NRF_PSEL (SPIM_MISO, 1, 7)>            // Unused MISO
+                <NRF_PSEL (SPIM_MOSI, 0, 6)>
             ;
         };
     };
@@ -111,8 +110,7 @@
         group1 {
             psels =     
                 <NRF_PSEL (SPIM_SCK, 0, 8)>,
-                <NRF_PSEL (SPIM_MOSI, 0, 6)>,
-                <NRF_PSEL (SPIM_MISO, 1, 7)>            // Unused MISO
+                <NRF_PSEL (SPIM_MOSI, 0, 6)>
             ;
             low-power-enable
             ;
@@ -158,7 +156,7 @@
         compatible = "zmk,gpio-595";
         status = "okay";                                                        // okay
         gpio-controller;
-        spi-max-frequency = <600000>;                                           // Maximum SPI frequency (0.6 MHz) 
+        spi-max-frequency = <500000>;                                           // Maximum SPI frequency (0.5 MHz) 
         #gpio-cells = <2>;
         reg = <0>;
         ngpios = <16>;                                                          // 8 per shift register chained
