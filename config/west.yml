@@ -3,18 +3,18 @@ manifest:
   # ZMK Remotes
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-  # OLED Support
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+  # McTech OLED Support (Personal Fork)
+    - name: Key947
+      url-base: https://github.com/Key947
   projects:
   # ZMK Remotes
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
-  # OLED Support
+  # McTech OLED Support (Personal Fork)
     - name: zmk-nice-oled
-      remote: mctechnology17
+      remote: Key947
       revision: main
   self:
     path: config
