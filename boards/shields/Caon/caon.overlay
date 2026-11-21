@@ -154,7 +154,7 @@
         compatible = "zmk,gpio-595";
         status = "okay";
         gpio-controller;
-        spi-max-frequency = <8000000>;                                           // Maximum SPI frequency (8 MHz) 
+        spi-max-frequency = <500000>;                                           // Maximum SPI frequency (0.5 MHz) 
         #gpio-cells = <2>;
         reg = <0>;
         ngpios = <16>;                                                          // 8 per shift register chained
